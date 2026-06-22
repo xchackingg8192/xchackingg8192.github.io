@@ -143,13 +143,15 @@
   .footer-github:hover { text-decoration: underline; }
 </style>
 </head>
+
 <body>
 
 <header>
   <div class="header-left">
-    <h1>0rky</h1>
+    <h1>Monsterm0ds</h1>
     <div class="subtitle">GitHub site</div>
   </div>
+
   <div class="header-right">
     the consoles where I am currently developing
     <div class="consoles">Wii, 3DS, DS, PSP, PS3, GC</div>
@@ -161,14 +163,14 @@
   <a href="hax.html">hax</a>
   <a href="RGX.html">RGX</a>
   <a href="projects.html">projects</a>
-  <a href="powerhax.html">powerhax</a>
+  <a href="ndbs-linux.html">NDBS Linux</a>
   <a href="customHB.html">customHB</a>
   <a href="p3kg.html">p3kg</a>
 </nav>
 
 <main>
   <p class="bio">
-    Hi my nickname is orky and I'm currently a beginner in hacking, homebrew
+    Hi my nickname is monsterm0ds and I'm currently a beginner in hacking, homebrew
     development (2026 current). I come from France and my goal is to help the homebrew
     community not for piracy but to contribute to the development of emulator, exploit and
     general coding. You can check my github which and just at the bottom of the page there are
@@ -223,9 +225,11 @@ function draw() {
       const y = baseY
         + Math.sin(x * wave.freq + t * wave.speed * 0.05 + wave.offset) * wave.amp
         + Math.sin(x * wave.freq * 0.5 + t * wave.speed * 0.03) * (wave.amp * 0.35);
+
       if (x === 0) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
     }
+
     ctx.stroke();
   });
 
