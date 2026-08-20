@@ -9,10 +9,24 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: #000;
+    background: #090a0f;
     color: #00ff41;
     font-family: 'Share Tech Mono', monospace;
     min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px;
+  }
+
+  .page-wrapper {
+    width: 100%;
+    max-width: 920px;
+    background: #0d0e15;
+    border: 1px solid #00ff4133;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 255, 65, 0.1);
     display: flex;
     flex-direction: column;
   }
@@ -21,73 +35,86 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 18px 20px 12px;
-    border-bottom: 1px solid #1a1a1a;
+    padding: 24px;
+    background: #12141d;
+    border-bottom: 1px solid #00ff4122;
   }
 
   .header-left h1 {
-    font-size: 22px;
+    font-size: 24px;
     color: #00ff41;
     font-weight: normal;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.3);
   }
 
   .header-left .subtitle {
     font-size: 13px;
-    color: #ff6600;
-    margin-top: 2px;
+    color: #ff8800;
+    margin-top: 4px;
   }
 
   .header-right {
-    border: 2px solid #ffff00;
-    padding: 10px 14px;
-    max-width: 220px;
+    border: 1px solid #ffff00aa;
+    background: rgba(255, 255, 0, 0.03);
+    border-radius: 10px;
+    padding: 12px 16px;
+    max-width: 260px;
     font-size: 12px;
     line-height: 1.6;
     color: #ffff00;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .header-right:hover {
+    border-color: #ffff00;
+    background: rgba(255, 255, 0, 0.08);
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.2);
   }
 
   .header-right .consoles {
-    color: #ff6600;
-    margin-top: 4px;
+    color: #ff8800;
+    margin-top: 6px;
     font-size: 12px;
+    font-weight: bold;
   }
 
   nav {
-    background: #0a0a0a;
-    border-bottom: 1px solid #00ff4133;
-    padding: 0 20px;
+    background: #0a0b10;
+    border-bottom: 1px solid #00ff4122;
+    padding: 6px 12px;
     display: flex;
-    gap: 0;
+    gap: 6px;
     overflow-x: auto;
   }
 
   nav a {
-    color: #00ff41;
+    color: #888;
     text-decoration: none;
     font-size: 12px;
-    letter-spacing: 1.5px;
-    padding: 10px 16px;
-    border-right: 1px solid #00ff4122;
-    transition: background 0.2s, color 0.2s;
+    letter-spacing: 1px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
     white-space: nowrap;
   }
 
-  nav a:first-child { border-left: 1px solid #00ff4122; }
-
   nav a:hover {
-    background: #00ff4115;
-    color: #fff;
+    color: #00ff41;
+    background: #00ff4110;
+    border-color: #00ff4133;
   }
 
   nav a.active {
-    background: #00ff4120;
-    color: #fff;
-    border-bottom: 2px solid #00ff41;
+    color: #00ff41;
+    background: #00ff411a;
+    border-color: #00ff4166;
   }
 
   main {
-    padding: 24px 20px 0;
+    padding: 28px 24px 0;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -96,17 +123,22 @@
   .bio {
     font-size: 13px;
     line-height: 1.8;
-    color: #00ff41;
-    max-width: 480px;
+    color: #00ff41dd;
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 3px solid #00ff41;
   }
 
   .wave-section {
-    margin-top: 28px;
+    margin-top: 24px;
     width: 100%;
-    flex: 1;
-    min-height: 260px;
+    height: 240px;
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
+    cursor: crosshair;
   }
 
   canvas {
@@ -118,19 +150,29 @@
   }
 
   footer {
-    background: #cc00cc;
-    padding: 14px 20px;
+    background: #12141d;
+    border-top: 1px solid #00ff4122;
+    padding: 16px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 12px;
   }
 
   .footer-email {
     font-size: 12px;
-    color: #000;
+    color: #aaa;
     font-family: 'Share Tech Mono', monospace;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #00000044;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .footer-email:hover {
+    color: #fff;
   }
 
   .footer-github {
@@ -138,61 +180,72 @@
     color: #00ffff;
     font-family: 'Share Tech Mono', monospace;
     text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid #00ffff44;
+    border-radius: 6px;
+    transition: all 0.2s ease;
   }
 
-  .footer-github:hover { text-decoration: underline; }
+  .footer-github:hover {
+    background: #00ffff1a;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="header-left">
-    <h1>Monsterm0ds</h1>
-    <div class="subtitle">Monsterm0ds GitHub site</div>
-  </div>
+<div class="page-wrapper">
+  <header>
+    <div class="header-left">
+      <h1>Monsterm0ds</h1>
+      <div class="subtitle">Monsterm0ds GitHub site</div>
+    </div>
 
-  <div class="header-right">
-    the consoles where I am currently developing
-    <div class="consoles">Wii, 3DS, DS, PSP, PS3, GC, </div>
-  </div>
-</header>
+    <div class="header-right" id="consoleBox">
+      the consoles where I am currently developing
+      <div class="consoles">Wii, 3DS, DS, PSP, PS3, GC, </div>
+    </div>
+  </header>
 
-<nav>
-  <a href="index.html" class="active">~/home</a>
-  <a href="hax.html">hax</a>
-  <a href="RGX.html">RGX</a>
-  <a href="projects.html">projects</a>
-  <a href="ndbs-linux.html">NDBS Linux</a>
-  <a href="customHB.html">customHB</a>
-  <a href="p3kg.html">p3kg</a>
-</nav>
+  <nav id="navMenu">
+    <a href="index.html" class="active">~/home</a>
+    <a href="hax.html">hax</a>
+    <a href="RGX.html">RGX</a>
+    <a href="projects.html">projects</a>
+    <a href="ndbs-linux.html">NDBS Linux</a>
+    <a href="customHB.html">customHB</a>
+    <a href="p3kg.html">p3kg</a>
+  </nav>
 
-<main>
-  <p class="bio">
-    Hi my nickname is monsterm0ds and I'm currently a beginner in hacking, homebrew
-    development (2026 current). I come from France and my goal is to help the homebrew
-    community not for piracy but to contribute to the development of emulator, exploit and
-    general coding. You can check my github which and just at the bottom of the page there are
-    quite a few projects. Same for my email address. thank you. 
-   i really love computer and monster energy...
-  </p>
+  <main>
+    <p class="bio">
+      Hi my nickname is monsterm0ds and I'm currently a beginner in hacking, homebrew
+      development (2026 current). I come from France and my goal is to help the homebrew
+      community not for piracy but to contribute to the development of emulator, exploit and
+      general coding. You can check my github which and just at the bottom of the page there are
+      quite a few projects. Same for my email address. thank you. 
+     i really love computer and monster energy...
+    </p>
 
-  <div class="wave-section">
-    <canvas id="waveCanvas"></canvas>
-  </div>
-</main>
+    <div class="wave-section" id="waveContainer">
+      <canvas id="waveCanvas"></canvas>
+    </div>
+  </main>
 
-<footer>
-  <span class="footer-email">xdatabenji@gmail.com</span>
-  <a class="footer-github" href="https://github.com/xchackingg8192" target="_blank">
-    https://github.com/xchackingg8192
-  </a>
-</footer>
+  <footer>
+    <span class="footer-email" id="emailBtn">xdatabenji@gmail.com</span>
+    <a class="footer-github" href="https://github.com/xchackingg8192" target="_blank">
+      https://github.com/xchackingg8192
+    </a>
+  </footer>
+</div>
 
 <script>
 const canvas = document.getElementById('waveCanvas');
 const ctx = canvas.getContext('2d');
+const waveContainer = document.getElementById('waveContainer');
 
 function resize() {
   canvas.width = canvas.offsetWidth;
@@ -201,11 +254,26 @@ function resize() {
 resize();
 window.addEventListener('resize', resize);
 
+let mouseX = 0;
+let mouseY = 0;
+let isHovered = false;
+
+waveContainer.addEventListener('mousemove', (e) => {
+  const rect = waveContainer.getBoundingClientRect();
+  mouseX = e.clientX - rect.left;
+  mouseY = e.clientY - rect.top;
+  isHovered = true;
+});
+
+waveContainer.addEventListener('mouseleave', () => {
+  isHovered = false;
+});
+
 const waves = [
-  { color: '#00ff41', speed: 0.8,  amp: 30, freq: 0.018, offset: 0.0, y: 0.30 },
-  { color: '#00dd33', speed: 0.6,  amp: 24, freq: 0.022, offset: 1.5, y: 0.42 },
-  { color: '#00ff88', speed: 1.0,  amp: 20, freq: 0.015, offset: 3.0, y: 0.54 },
-  { color: '#009922', speed: 0.5,  amp: 34, freq: 0.012, offset: 0.8, y: 0.66 },
+  { color: '#00ff41', speed: 0.8, amp: 30, freq: 0.018, offset: 0.0, y: 0.30 },
+  { color: '#00dd33', speed: 0.6, amp: 24, freq: 0.022, offset: 1.5, y: 0.42 },
+  { color: '#00ff88', speed: 1.0, amp: 20, freq: 0.015, offset: 3.0, y: 0.54 },
+  { color: '#009922', speed: 0.5, amp: 34, freq: 0.012, offset: 0.8, y: 0.66 },
   { color: '#00ffcc', speed: 0.75, amp: 26, freq: 0.020, offset: 2.2, y: 0.78 },
 ];
 
@@ -218,14 +286,23 @@ function draw() {
     ctx.beginPath();
     ctx.strokeStyle = wave.color;
     ctx.lineWidth = 2;
-    ctx.globalAlpha = 0.9;
+    ctx.globalAlpha = 0.85;
 
     const baseY = canvas.height * wave.y;
 
     for (let x = 0; x <= canvas.width; x += 2) {
+      let distModifier = 0;
+      if (isHovered) {
+        const dist = Math.abs(x - mouseX);
+        if (dist < 120) {
+          distModifier = Math.sin((1 - dist / 120) * Math.PI) * (mouseY - baseY) * 0.4;
+        }
+      }
+
       const y = baseY
         + Math.sin(x * wave.freq + t * wave.speed * 0.05 + wave.offset) * wave.amp
-        + Math.sin(x * wave.freq * 0.5 + t * wave.speed * 0.03) * (wave.amp * 0.35);
+        + Math.sin(x * wave.freq * 0.5 + t * wave.speed * 0.03) * (wave.amp * 0.35)
+        + distModifier;
 
       if (x === 0) ctx.moveTo(x, y);
       else ctx.lineTo(x, y);
@@ -240,6 +317,23 @@ function draw() {
 }
 
 draw();
+
+document.querySelectorAll('#navMenu a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelectorAll('#navMenu a').forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+document.getElementById('emailBtn').addEventListener('click', function() {
+  navigator.clipboard.writeText(this.innerText);
+  const originalText = this.innerText;
+  this.innerText = '[Copied to clipboard!]';
+  setTimeout(() => {
+    this.innerText = originalText;
+  }, 1500);
+});
 </script>
 
 </body>
