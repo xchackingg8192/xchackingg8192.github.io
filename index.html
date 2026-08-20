@@ -175,6 +175,16 @@
     color: #fff;
   }
 
+  .visit-counter {
+    font-size: 12px;
+    color: #ff8800;
+    background: #ff880011;
+    border: 1px solid #ff880044;
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+  }
+
   .footer-github {
     font-size: 12px;
     color: #00ffff;
@@ -236,6 +246,7 @@
 
   <footer>
     <span class="footer-email" id="emailBtn">xdatabenji@gmail.com</span>
+    <div class="visit-counter">VISITS: <span id="counterValue">000001</span></div>
     <a class="footer-github" href="https://github.com/xchackingg8192" target="_blank">
       https://github.com/xchackingg8192
     </a>
@@ -334,6 +345,11 @@ document.getElementById('emailBtn').addEventListener('click', function() {
     this.innerText = originalText;
   }, 1500);
 });
+
+let visits = localStorage.getItem('site_visits') || 0;
+visits = parseInt(visits) + 1;
+localStorage.setItem('site_visits', visits);
+document.getElementById('counterValue').innerText = String(visits).padStart(6, '0');
 </script>
 
 </body>
